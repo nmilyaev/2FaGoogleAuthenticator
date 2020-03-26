@@ -61,8 +61,7 @@ public class GeneratorService {
         }
     }
 
-    // TODO - complete
-    public static void createQRCode(String barCodeData, String filePath, int height, int width)
+    public void createQRCode(String barCodeData, String filePath, int height, int width)
             throws WriterException, IOException {
         BitMatrix matrix = new MultiFormatWriter().encode(barCodeData, BarcodeFormat.QR_CODE,
                 width, height);

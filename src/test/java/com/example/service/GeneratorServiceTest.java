@@ -52,11 +52,18 @@ public class GeneratorServiceTest {
 
     @Test
     public void shouldGenerateBarCode() {
-        // Given
-
         // When
         final String code = generatorService.getGoogleAuthenticatorBarCode(generatorService.getSecretKey(), userAccount, "blah");
         // Then
-        System.out.println(">>>>" + code + "<<<<");
+        assertThat(code).isEqualTo("otpauth://totp/blah%3An.milyaev%40yahoo.co.uk?secret=HNRAVAH432QUBFOD3AW2NM2T3MGWRNOP&issuer=blah");
+    }
+
+    @Test
+    public void shouldGenerateQRCode() throws Exception{
+        // Given
+        String barCodeData = generatorService.getGoogleAuthenticatorBarCode(generatorService.getSecretKey(), userAccount, "blah");
+        // When
+        generatorService.createQRCode(barCodeData, "barcode.png", 100, 100);
+        // Then
     }
 }
