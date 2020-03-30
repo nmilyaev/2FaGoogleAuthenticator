@@ -9,7 +9,6 @@ import de.taimos.totp.TOTP;
 import org.apache.commons.codec.binary.Base32;
 import org.apache.commons.codec.binary.Hex;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.io.FileOutputStream;
@@ -19,7 +18,6 @@ import java.net.URLEncoder;
 import java.security.SecureRandom;
 
 @Service
-@PropertySource("classpath:application.properties")
 public class GeneratorService {
 
     @Value("${secret.key}")

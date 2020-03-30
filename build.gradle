@@ -16,12 +16,17 @@ dependencies {
 	compile 'de.taimos:totp:1.0'
 	compile 'commons-codec:commons-codec:1.10'
 	compile 'com.google.zxing:javase:3.2.1'
+	compile 'org.projectlombok:lombok:1.18.4'
+	compile 'org.mongodb:mongo-java-driver'
+	compile 'org.springframework.data:spring-data-mongodb'
+    compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-jersey'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
 }
 
 test {
